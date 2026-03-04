@@ -23,7 +23,7 @@ public class Circle implements Shape {
     }
     public static void main(String[] args) {
         
-        Shape circle = new Circle(2);
+        Shape circle = new Circle(5);
         System.out.println(circle.area());
         System.out.println(circle.perimeter());
 

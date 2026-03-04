@@ -17,9 +17,9 @@ public class Triangle implements Shape {
     }
     
     public double area() {    
-        double s = perimeter()  / 2;  
-        double product = (s) * ((s-sideA)* (s-sideB) * (s-sideC));
-        return product;
+        double s = perimeter()  / 2;  // (a + b + c) divided by 2
+        double product = (s) * ((s-sideA)* (s-sideB) * (s-sideC)); // s times (s-a)(s-b)(s-c)
+        return Math.sqrt(product); //not sure why perimeter returning 0 shouldve been square root of product above 
     }
 
     public static void main(String[] args) {

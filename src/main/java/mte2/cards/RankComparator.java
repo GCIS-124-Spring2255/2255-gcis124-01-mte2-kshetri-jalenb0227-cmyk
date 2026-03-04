@@ -38,5 +38,6 @@ public class RankComparator implements Comparator<PlayingCard> {
         
         Collections.sort(cards, new RankComparator()); // invoke
         System.out.println(cards);
+        
     }
 }

@@ -23,8 +23,8 @@ public class Rectangle implements Shape {
     
     public static void main(String[] args) {
         Shape rect = new Rectangle(4, 5);
-        System.out.println(rect.area());
-        System.out.println(rect.perimeter());
+        System.out.println(rect.area()); //20 
+        System.out.println(rect.perimeter()); //18 
         
 
     }
