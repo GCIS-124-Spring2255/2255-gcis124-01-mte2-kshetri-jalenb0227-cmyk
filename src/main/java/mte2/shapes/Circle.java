@@ -24,8 +24,8 @@ public class Circle implements Shape {
     public static void main(String[] args) {
         
         Shape circle = new Circle(5);
-        System.out.println(circle.area());
-        System.out.println(circle.perimeter());
+        System.out.println(circle.area()); // 78.53981633974483
+        System.out.println(circle.perimeter()); // 31.41592653589793
 
     }
 }
