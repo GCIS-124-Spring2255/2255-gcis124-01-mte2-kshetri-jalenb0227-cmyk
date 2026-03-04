@@ -4,18 +4,28 @@
 
 package mte2.shapes;
 
-public class Circle {
-// public class Circle implements Shape {
+
+public class Circle implements Shape {
     
-    // private final double radius;
-    // public Circle(double radius) {    this.radius = radius;    }
+    private final double radius;
+    public Circle(double radius) {    
+        this.radius = radius;    
+    }
 
-    // @Override
-    // @Override
-
+    @Override
+    public double perimeter() {
+        return Math.PI * 2 * radius;
+    }
+    
+    @Override
+    public double area() {
+        return Math.PI * (Math.pow(radius, 2));
+    }
     public static void main(String[] args) {
         
-        // ...
+        Shape circle = new Circle(2);
+        System.out.println(circle.area());
+        System.out.println(circle.perimeter());
 
     }
 }

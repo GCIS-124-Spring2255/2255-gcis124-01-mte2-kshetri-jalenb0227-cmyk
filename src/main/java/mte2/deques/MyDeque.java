@@ -4,30 +4,96 @@
 
 package mte2.deques;
 
-// import java.util.LinkedList;
-// import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class MyDeque {
-// public class MyDeque<E> implements Deque<E> {
+public class MyDeque<E> implements Deque<E> {
     
-    // private final LinkedList<E> list;
-    // public MyDeque() {    list = new LinkedList<>();    }
+    private final LinkedList<E> list;
+    private int size;
+    
+    public MyDeque() {    
+        list = new LinkedList<>(); 
+        size = 0;   
+    }
 
-    // ... for enqueueFront ...
+    @Override
+    public void enqueueFront( E element) {
+        list.addFirst(element);
+        size++;
+    }
 
-    // ... for enqueueBack ...
+    @Override
+    public void enqueueBack( E element) {
+        list.addLast(element);
+        size++;
+    }
 
-    // ... for dequeueFront ...
+    @Override
+    public E dequeueFront() {
+        if (size == 0) {
+            return null;
+        }
+        E first = list.removeFirst();
+        size--;
+        return first;
+    }
 
-    // ... for dequeueBack ... 
+    @Override
+    public E dequeueBack() {
+        if (size == 0) {
+            return null;
+        }
+        E last = list.removeLast();
+        size--;
+        return last;
+    }
 
-    // ... for size ...
+    @Override
+    public int size() {
+        return size;
+    }
 
-    // ... for iterator ...
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                E elem = list.get(index);
+                index++;
+                return elem;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
+    }
+
 
 
     public static void main(String[] args) { 
 
-        // ...
+        MyDeque<String> deque = new MyDeque<>();
+        deque.enqueueFront("a");
+        deque.enqueueBack("b");
+        deque.enqueueFront("c");
+        deque.enqueueBack("d");
+        deque.dequeueFront();
+        deque.dequeueFront();
+        System.out.println(deque.size());
+
     }
 }

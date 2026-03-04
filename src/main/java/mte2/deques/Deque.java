@@ -4,7 +4,8 @@
 
 package mte2.deques;
 
-// public class Deque {
+import java.util.Iterator;
+
 public interface Deque<E> extends Iterable<E> {
     
     public void enqueueFront(E element);
@@ -12,5 +13,7 @@ public interface Deque<E> extends Iterable<E> {
     public E dequeueFront();
     public E dequeueBack();
     public int size();    
+
+    public Iterator<E> iterator(); 
 
 }
