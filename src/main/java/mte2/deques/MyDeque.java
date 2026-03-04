@@ -95,5 +95,9 @@ public class MyDeque<E> implements Deque<E> {
         deque.dequeueFront();
         System.out.println(deque.size());
 
+        for (String element : deque) {
+            System.out.println(element);
+        }
+
     }
 }
